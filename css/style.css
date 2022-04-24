@@ -303,10 +303,6 @@ nav {
     grid-area: text;
   }
 
-  .experience-item + .experience-item {
-    margin-top: 5em;
-  }
-
   .experience-item-odd .experience-img {
     grid-area: img1;
   }
@@ -324,6 +320,45 @@ nav {
 
 .footer {
   background-color: #fff;
+  color: var(--clr-dark);
   text-align: center;
-  padding: 1em 0;
+}
+
+:focus {
+  position: relative;
+  z-index: 2;
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 1em;
+}
+
+.footer a {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+.footer__link {
+  font-weight: var(--fw-bold);
+}
+
+.footer a:hover,
+.social-list__item:hover {
+  position: relative;
+  z-index: 2;
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 0.1em;
+}
+
+.social-list {
+  list-style: none;
+  display: flex;
+  margin: 1em auto;
+  padding: 0;
+  justify-content: center;
+  column-gap: 2em;
+}
+
+.footer-break {
+  height: 1.5em;
+  background-image: linear-gradient(var(--clr-accent), #fff);
+  margin: 0;
 }
