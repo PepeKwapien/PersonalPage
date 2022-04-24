@@ -124,7 +124,7 @@ nav {
   .intro {
     display: grid;
     column-gap: 1em;
-    margin: 0 auto;
+    margin: 3em auto 3em;
     width: min-content;
     grid-template-areas:
       "img title"
@@ -208,6 +208,7 @@ nav {
 
 .about--img {
   box-shadow: var(--bs);
+  margin-right: 4em;
 }
 
 @media (min-width: 600px) {
@@ -231,7 +232,7 @@ nav {
     grid-row: 2;
     align-self: start;
     position: relative;
-    width: calc(100% + 1.5em);
+    width: calc(100% + 1em);
   }
 
   .about--img {
@@ -256,6 +257,11 @@ nav {
   background-blend-mode: multiply;
 }
 
+.experience {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .section__title--work {
   color: var(--clr-accent);
 }
@@ -265,7 +271,45 @@ nav {
   display: block;
   width: 25%;
   height: 1px;
-  margin: 0.5em auto 1em;
+  margin: 0.5em auto 1.5em;
   background: var(--clr-light);
   opacity: 0.5;
+}
+
+.experience-item {
+  line-height: 1rem;
+}
+
+.experience-img {
+  border-radius: 50%;
+  display: inline;
+  width: 150px;
+  margin-bottom: 0.5em;
+}
+
+.experience-item + .experience-item {
+  margin-top: 3em;
+}
+
+@media (min-width: 800px) {
+  .experience-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2em;
+  }
+
+  .experience-item-desc {
+    padding-left: auto;
+    padding-right: auto;
+  }
+
+  .experience-item + .experience-item {
+    margin-top: 5em;
+  }
+
+  .experience-item-even {
+    flex-direction: row-reverse;
+    margin-left: auto;
+  }
 }
