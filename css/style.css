@@ -15,6 +15,7 @@
 
   --clr-light: #fff;
   --clr-dark: #303030;
+  --clr-darker: rgba(0, 0, 0, 0.9);
   --clr-accent: #7aadff;
 
   --fs-h1: 2.8rem;
@@ -96,7 +97,7 @@ strong {
 .section__subtitle--about,
 .section__subtitle--intro {
   font-family: var(--ff-secondary);
-  padding: 0.25em 1em;
+  padding: 0.25em 1.2em;
   background-color: var(--clr-accent);
   margin-bottom: 1em;
 }
@@ -119,7 +120,7 @@ nav {
   text-transform: uppercase;
 }
 
-@media (min-width: 620px) {
+@media (min-width: 600px) {
   .intro {
     display: grid;
     column-gap: 1em;
@@ -147,4 +148,124 @@ nav {
     left: -1.5em;
     width: calc(100% + 1.5em);
   }
+}
+
+/* Background */
+
+.background {
+  background-color: var(--clr-darker);
+  color: var(--clr-light);
+  background-image: url(../img/background.jpg);
+  background-blend-mode: multiply;
+  background-size: cover;
+  text-align: center;
+}
+
+.section__title--background {
+  color: var(--clr-accent);
+  position: relative;
+}
+
+.section__title--background::after {
+  content: "";
+  display: block;
+  width: 25%;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: var(--clr-light);
+  opacity: 0.5;
+}
+
+.background-story {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .background-story + .background-story {
+    margin-top: 2em;
+  }
+}
+
+@media (min-width: 800px) {
+  .background-stories {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+
+  .background-story + .background-story {
+    margin-left: 2em;
+  }
+}
+
+/* About */
+
+.about {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about--img {
+  box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas:
+      "title img"
+      "subtitle img"
+      "text text";
+    column-gap: 2em;
+  }
+
+  .section__title--about {
+    grid-area: title;
+    margin-top: auto;
+  }
+
+  .section__subtitle--about {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    align-self: start;
+    position: relative;
+    width: calc(100% + 1.5em);
+  }
+
+  .about--img {
+    grid-area: img;
+    position: relative;
+    z-index: 2;
+  }
+
+  .about__body {
+    display: block;
+    grid-area: text;
+  }
+}
+
+/* Work */
+
+.work {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+  text-align: center;
+  background-image: url(../img/work.png);
+  background-blend-mode: multiply;
+}
+
+.section__title--work {
+  color: var(--clr-accent);
+}
+
+.section__title--work::after {
+  content: "";
+  display: block;
+  width: 25%;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: var(--clr-light);
+  opacity: 0.5;
 }
