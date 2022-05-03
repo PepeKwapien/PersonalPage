@@ -46,7 +46,7 @@ body {
 }
 
 section {
-  padding: 4em 1.5em;
+  padding: 4em 1em;
 }
 
 img {
@@ -125,6 +125,7 @@ nav {
     display: grid;
     column-gap: 1em;
     margin: 3em auto 3em;
+    padding: 5em 0;
     width: min-content;
     grid-template-areas:
       "img title"
@@ -177,25 +178,29 @@ nav {
 }
 
 .background-story {
-  max-width: 500px;
+  max-width: 750px;
   margin: 0 auto;
 }
 
-@media (max-width: 800px) {
-  .background-story + .background-story {
-    margin-top: 2em;
-  }
+.background-story + .background-story {
+  margin-top: 2em;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 900px) {
   .background-stories {
     display: flex;
+    justify-content: space-evenly;
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 1050px;
   }
 
   .background-story + .background-story {
-    margin-left: 2em;
+    margin-left: 3em;
+    margin-top: 0;
+  }
+
+  .background-story {
+    flex: 1 1 0;
   }
 }
 
