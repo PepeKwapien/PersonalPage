@@ -13,7 +13,7 @@
   --fw-reg: 300;
   --fw-bold: 900;
 
-  --clr-light: #fff;
+  --clr-light: rgb(240, 240, 240);
   --clr-dark: #303030;
   --clr-darker: rgba(0, 0, 0, 0.9);
   --clr-accent: #7aadff;
@@ -95,6 +95,7 @@ strong {
 }
 
 .section__subtitle--about,
+.section__subtitle--about2,
 .section__subtitle--intro {
   font-family: var(--ff-secondary);
   padding: 0.25em 1.2em;
@@ -162,6 +163,12 @@ nav {
   text-align: center;
 }
 
+.background-transition {
+  height: 1.5em;
+  background-image: linear-gradient(var(--clr-light), var(--clr-accent));
+  margin: 0;
+}
+
 .section__title--background {
   color: var(--clr-accent);
   position: relative;
@@ -191,7 +198,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     margin: 0 auto;
-    max-width: 1050px;
+    max-width: 1100px;
   }
 
   .background-story + .background-story {
@@ -211,9 +218,21 @@ nav {
   margin: 0 auto;
 }
 
-.about--img {
+.break {
+  margin: 1em 4em;
+  height: 1px;
+  grid-area: break;
+  opacity: 25%;
+  background-color: var(--clr-darker);
+}
+
+.about--img,
+.about--img2 {
   box-shadow: var(--bs);
-  margin-right: 4em;
+}
+
+.section__subtitle--about2 {
+  margin-top: 1.5em;
 }
 
 @media (min-width: 600px) {
@@ -223,7 +242,9 @@ nav {
     grid-template-areas:
       "title img"
       "subtitle img"
-      "text text";
+      "text text"
+      "break break"
+      "hard hard";
     column-gap: 2em;
   }
 
@@ -249,6 +270,47 @@ nav {
   .about__body {
     display: block;
     grid-area: text;
+  }
+
+  /* Hard skills */
+
+  .about-hard-skill {
+    grid-area: hard;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: min-content min-content max-content;
+    grid-template-areas:
+      "img subtitle"
+      "img text"
+      "img list"
+      "rest rest";
+    column-gap: 3em;
+    margin-top: 0.5em;
+  }
+
+  .about--img2 {
+    grid-area: img;
+    position: relative;
+    margin-left: 1.5em;
+    z-index: 2;
+  }
+
+  .section__subtitle--about2 {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    align-self: start;
+    position: relative;
+    text-align: right;
+  }
+
+  .hard-text-1 {
+    display: block;
+    grid-area: text;
+    margin: 0;
+  }
+
+  .hard-text-2 {
+    grid-area: rest;
   }
 }
 
@@ -327,6 +389,7 @@ nav {
   background-color: #fff;
   color: var(--clr-dark);
   text-align: center;
+  padding: 1em 0;
 }
 
 :focus {
