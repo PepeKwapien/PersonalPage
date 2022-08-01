@@ -121,17 +121,12 @@ nav {
   text-transform: uppercase;
 }
 
-.myName {
+.pepe-pawel {
   display: inline-block;
   width: 3em;
 }
 
 @media (min-width: 600px) {
-  .myName {
-    display: inline-block;
-    width: 3.1em;
-  }
-
   .intro {
     display: grid;
     column-gap: 1em;

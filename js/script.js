@@ -46,5 +46,4 @@ async function removeAndChangeName() {
   whichName = ++whichName % 2;
 }
 
-setTimeout(removeAndChangeName, 2500);
 setInterval(removeAndChangeName, 5000);
