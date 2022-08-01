@@ -3,7 +3,7 @@ console.log(myName);
 
 let names = [
   ["e", "p", "e"],
-  ["a", "w", "e", "l"],
+  ["a", "w", "e", "ł"],
 ];
 
 async function waitUntil(condition, action, intervalTime) {
