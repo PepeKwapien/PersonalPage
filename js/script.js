@@ -19,6 +19,10 @@ async function waitUntil(condition, action, intervalTime) {
   });
 }
 
+function timeout(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 var whichName = 0;
 var intervalTime = 200;
 var lap = 0;
@@ -46,5 +50,16 @@ async function removeAndChangeName() {
   whichName = ++whichName % 2;
 }
 
-removeAndChangeName();
-setInterval(removeAndChangeName, 5000);
+function timeout(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+var isInitial = true;
+
+async function run() {
+  await timeout(1000);
+  removeAndChangeName();
+  setInterval(removeAndChangeName, 5000);
+}
+
+run();
