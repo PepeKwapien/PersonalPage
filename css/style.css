@@ -121,6 +121,11 @@ nav {
   text-transform: uppercase;
 }
 
+#myName {
+  display: inline-block;
+  width: 3em;
+}
+
 @media (min-width: 600px) {
   .intro {
     display: grid;
