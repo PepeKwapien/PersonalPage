@@ -58,7 +58,7 @@ var isInitial = true;
 
 async function run() {
   await timeout(1000);
-  removeAndChangeName();
+  await removeAndChangeName();
   setInterval(removeAndChangeName, 5000);
 }
 
