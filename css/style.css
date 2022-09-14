@@ -327,6 +327,7 @@ nav {
   text-align: center;
   background-image: url(../img/work.png);
   background-blend-mode: multiply;
+  background-size: cover;
 }
 
 .experience {
